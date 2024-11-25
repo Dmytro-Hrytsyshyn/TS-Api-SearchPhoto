@@ -1,0 +1,17 @@
+.imgItem {
+  list-style: none;
+  width: calc((100% - 30px) / 3);
+}
+
+.image {
+  display: block;
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  cursor: pointer;
+  transition: scale 500ms;
+}
+
+.image:hover {
+  transform: scale(0.95);
+}
