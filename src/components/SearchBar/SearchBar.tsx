@@ -16,7 +16,7 @@ const SearchBar: React.FC<SearchBarProps> = ({ onSubmit }) => {
     if (searchWord.trim() === "") {
       toast("Enter a word to search!", {
         position: "top-right",
-        duration: 1000,
+        duration: 2000,
         icon: "⚠️",
         style: {
           borderRadius: "10px",
@@ -30,22 +30,20 @@ const SearchBar: React.FC<SearchBarProps> = ({ onSubmit }) => {
   };
 
   return (
-    <header className={css.header}>
-      <form onSubmit={searchByWord}>
-        <Toaster />
-        <input
-          className={css.input}
-          type="text"
-          name="searchWord"
-          autoComplete="off"
-          autoFocus
-          placeholder="Search images and photos"
-        />
-        <button type="submit" className={css.searchBtn}>
-          Search
-        </button>
-      </form>
-    </header>
+    <form className={css.form} onSubmit={searchByWord}>
+      <Toaster />
+      <input
+        className={css.input}
+        type="text"
+        name="searchWord"
+        autoComplete="off"
+        autoFocus
+        placeholder="Search images"
+      />
+      <button type="submit" className={css.btn}>
+        <span className={css.span}>Search</span>
+      </button>
+    </form>
   );
 };
 

@@ -1,3 +1,24 @@
+.container_image {
+  background-color: rgba(157, 161, 161, 0.8);
+  border-radius: 15px;
+  border: none;
+  overflow: hidden;
+  transition: scale 500ms;
+}
+
+.span_color {
+  color: rgb(204, 246, 215);
+}
+
+.image_info {
+  display: flex;
+  justify-content: space-around;
+  font-size: large;
+  font-weight: 600;
+  color: rgb(255, 255, 255);
+  padding: 10px;
+}
+
 .imgItem {
   list-style: none;
   width: calc((100% - 30px) / 3);
@@ -9,9 +30,8 @@
   height: 250px;
   object-fit: cover;
   cursor: pointer;
-  transition: scale 500ms;
 }
 
-.image:hover {
+.container_image:hover {
   transform: scale(0.95);
 }

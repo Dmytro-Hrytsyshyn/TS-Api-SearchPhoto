@@ -14,9 +14,9 @@ export const ImageGallery: React.FC<ImageGalleryProps> = ({
             key={img.id}
             alt={img.alt_description}
             src={img.urls.small}
-            name={img.description}
             srcReg={img.urls.regular}
             likes={img.likes}
+            name={img.user.name}
             openModal={openModal}
           />
         ))}

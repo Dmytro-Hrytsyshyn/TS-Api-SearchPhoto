@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
-import axios from "axios";
-import "./App.css";
+import style from "./App.module.css";
 
 import SearchBar from "./components/SearchBar/SearchBar";
 import { ImageGallery } from "./components/ImageGallery/ImageGallery";
@@ -9,6 +8,7 @@ import Loader from "./components/Loader/Loader";
 import LoadMoreBtn from "./components/LoadMoreBtn/LoadMoreBtn";
 import ImageModal from "./components/ImageModal/ImageModal";
 import { ImgData, ModalImgData } from "./types";
+import { fetchImages } from "./api/unsplash";
 
 const App = () => {
   const [searchTerm, setSearchTerm] = useState<string | null>(null);
@@ -28,9 +28,7 @@ const App = () => {
         setisLoading(true);
         setError(null);
 
-        const { data }: { data: ImgData } = await axios.get(
-          `https://api.unsplash.com/search/photos?client_id=4lKKdkfWCfDLZYT9-8NaB0SDVimhhTVfwjX3NlnOhYs&page=${page}&query=${searchTerm}&orientation=landscape`
-        );
+        const data = await fetchImages(searchTerm, page);
 
         setTotalPages(data.total_pages);
 
@@ -41,6 +39,8 @@ const App = () => {
         }
 
         setImgArr((prev) => {
+          console.log(prev);
+
           if (prev) {
             return [...prev, ...data.results];
           } else {
@@ -81,7 +81,7 @@ const App = () => {
   };
 
   return (
-    <>
+    <div className={style.container}>
       <SearchBar onSubmit={onSubmit} />
       <ImageGallery imgArr={imgArr} openModal={openModal} />
       {isLoading && <Loader />}
@@ -96,7 +96,7 @@ const App = () => {
           onRequestClose={closeModal}
         />
       )}
-    </>
+    </div>
   );
 };
 

@@ -5,8 +5,8 @@ const LoadMoreBtn: React.FC<LoadMoreBtnProps> = ({ onLoadMore, imgArr }) => {
   return (
     <>
       {imgArr && (
-        <button className={css.loadBtn} type="button" onClick={onLoadMore}>
-          Load more
+        <button className={css.btn} type="button" onClick={onLoadMore}>
+          <span className={css.span}>Load more</span>
         </button>
       )}
     </>
