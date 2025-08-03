@@ -1,8 +1,34 @@
 # React + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+🖼️ Image Search App
+A simple image search application built with React, TypeScript, and the Unsplash API. Users can search for images by keyword, browse results in a gallery, view full-size photos in a modal, and load more images with pagination.
 
-Currently, two official plugins are available:
+🚀 Features
+🔍 Search for images by keyword
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+📄 Display results in a responsive gallery
+
+💬 Message when no results are found
+
+🔁 "Load More" button for pagination
+
+🌀 Loading indicator while fetching data
+
+❤️ Show likes and author information for each image
+
+🔍 Open images in a modal window
+
+📦 Automatic scroll after loading new results
+
+<!-- Technologies  -->
+
+🧱 Technologies Used
+React
+
+TypeScript
+
+Unsplash API
+
+Axios
+
+CSS Modules for styling
