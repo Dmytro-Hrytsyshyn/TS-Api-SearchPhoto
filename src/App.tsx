@@ -9,6 +9,7 @@ import LoadMoreBtn from "./components/LoadMoreBtn/LoadMoreBtn";
 import ImageModal from "./components/ImageModal/ImageModal";
 import { ImgData, ModalImgData } from "./types";
 import { fetchImages } from "./api/unsplash";
+import Header from "./components/Header/Header";
 
 const App = () => {
   const [searchTerm, setSearchTerm] = useState<string | null>(null);
@@ -82,6 +83,7 @@ const App = () => {
 
   return (
     <div className={style.container}>
+      <Header />
       <SearchBar onSubmit={onSubmit} />
       <ImageGallery imgArr={imgArr} openModal={openModal} />
       {isLoading && <Loader />}
